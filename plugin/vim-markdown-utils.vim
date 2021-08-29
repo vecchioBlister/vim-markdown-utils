@@ -1,6 +1,8 @@
-" vim-markdown-utils
-" by LionSpeck@github.com
-" licensed under GPLv3
+" ================================================
+" Filename: plugin/vim-markdown-utils
+" Author: LionSpeck
+" License: GPLv3
+" ================================================
 
 " markdown heading
 function! MarkdownHeading(level)
