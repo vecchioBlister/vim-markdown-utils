@@ -77,12 +77,11 @@ let g:markdownfootnote_mark = "x"
 to whatever you prefer, by adding this to your .vimrc.
 
 
-### Known bugs:
+### Known limitations:
 
-- MarkdownFootnote() 's current footnote number can reset.
-	- It tracks the number of footnotes with a buffer-scoped variable; if the buffer is unloaded, or footnotes existed already before opening it, the newly added ones will start from 1.
-	- To patch this, you can type the command `:let b:footnotes = N`, replacing `N` with the **footnote you want next**.
-- MarkdownFootnote() 's global variable for the default mark doesn't work properly.
+MarkdownFootnote() 's current footnote number is bound to the buffer.
+- The number of footnotes is tracked with a buffer-scoped variable; if the file already contained footnotes, or the buffer is unloaded, the variable is reset, and the new footnotes will start from 1.
+- To patch this, you can type the command `:let b:footnotes = N`, replacing `N` with the **footnote you want next**.
 
 
 LineSwappie(direction)
