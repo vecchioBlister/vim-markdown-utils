@@ -85,7 +85,7 @@ to whatever you prefer, by adding this to your .vimrc.
 - MarkdownFootnote() 's global variable for the default mark doesn't work properly.
 
 
-MarkdownTasks(done)
+MarkdownTask(done)
 -------------------
 
 Manage the current line (in a list) as a task.
