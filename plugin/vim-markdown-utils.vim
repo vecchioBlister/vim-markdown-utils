@@ -75,9 +75,13 @@ nnoremap <leader>sw :call MarkdownItalic(2)<cr>
 " markdown footnote
 function! MarkdownFootnote()
 	if !exists("b:footnotes")
+		" check if other footnotes exist in the same buffer
 		let b:footnotes = 1
 	endif
-	normal! mb
+	if !exists("g:markdownfootnote_mark")
+		let g:markdownfootnote_mark = "n"
+	endif
+	exe "normal! m" . g:markdownfootnote_mark
 		" set marker to come back
 	normal! A [^
 	exe "normal! a" . b:footnotes . "\<esc>"
