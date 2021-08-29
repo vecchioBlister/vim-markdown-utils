@@ -123,6 +123,35 @@ endfunction
 nnoremap <leader>fn :call MarkdownFootnote()<cr>
 
 " ================================================
+" swap lines
+function! LineSwappie(direction)
+	if a:direction == 0
+		" left
+		normal! <<
+	elseif a:direction == 1
+		" down
+		normal! dd
+		normal! p
+	elseif a:direction == 2
+		" up
+		let current_line = line(".")
+		normal! dd
+		if current_line != line("$") + 1
+			normal! k
+		endif
+		normal! P
+	elseif a:direction == 3
+		" right
+		normal! >>
+	endif
+endfunction
+
+nnoremap <c-h> :call LineSwappie(0)<cr>
+nnoremap <c-j> :call LineSwappie(1)<cr>
+nnoremap <c-k> :call LineSwappie(2)<cr>
+nnoremap <c-l> :call LineSwappie(3)<cr>
+
+" ================================================
 " markdown task
 function! MarkdownTask(done)
 	normal! mz

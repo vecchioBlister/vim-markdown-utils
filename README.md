@@ -58,7 +58,7 @@ MarkdownFootnote()
 ------------------
 
 Add a footnote to the current line, then start editing.
-It also saves a mark ("n" is default), to jump back to the previous line. You can also press `^o` / `C-o`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
+It also saves a mark ("n" is default), to jump back to the previous line. You can also press `^o` / `c-o`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
 
 Example:
 
@@ -83,6 +83,22 @@ to whatever you prefer, by adding this to your .vimrc.
 	- It tracks the number of footnotes with a buffer-scoped variable; if the buffer is unloaded, or footnotes existed already before opening it, the newly added ones will start from 1.
 	- To patch this, you can type the command `:let b:footnotes = N`, replacing `N` with the **footnote you want next**.
 - MarkdownFootnote() 's global variable for the default mark doesn't work properly.
+
+
+LineSwappie(direction)
+----------------------
+
+Quickly swap the current line with the one above or below.
+Also supports, with consistent keybinds, quick indent (promotion) and de-indent (demotion).
+Can be used in any language, as it binds to the `<<` and `>>` actions for indentation.
+
+Keybinds:
+```
+<c-h>
+<c-j>
+<c-k>
+<c-l>
+```
 
 
 MarkdownTask(done)
