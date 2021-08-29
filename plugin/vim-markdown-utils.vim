@@ -17,8 +17,8 @@
 "
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <https://www.gnu.org/licenses/>.
-" ================================================
 
+" ================================================
 " markdown heading
 function! MarkdownHeading(level)
 	if a:level == 1
@@ -34,6 +34,7 @@ nnoremap <leader>u1 :call MarkdownHeading(1)<cr>
 nnoremap <leader>u2 :call MarkdownHeading(2)<cr>
 nnoremap <leader>u3 :call MarkdownHeading(3)<cr>
 
+" ================================================
 " markdown table
 function! MarkdownTable()
 	normal! yypf|
@@ -58,6 +59,7 @@ endfunction
 
 nnoremap <leader>tbl :call MarkdownTable()<cr>
 
+" ================================================
 " markdown italic, bold, strong
 function! MarkdownItalic(enum)
 	if col(".") != 1
@@ -92,6 +94,7 @@ nnoremap <leader>bw :call MarkdownItalic(1)<cr>
 nnoremap <leader>sw :call MarkdownItalic(2)<cr>
 nnoremap <leader>stw :call MarkdownItalic(3)<cr>
 
+" ================================================
 " markdown footnote
 function! MarkdownFootnote()
 	if !exists("b:footnotes")
@@ -119,6 +122,7 @@ endfunction
 
 nnoremap <leader>fn :call MarkdownFootnote()<cr>
 
+" ================================================
 " markdown task
 function! MarkdownTask(done)
 	normal! mz
