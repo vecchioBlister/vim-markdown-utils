@@ -13,6 +13,7 @@ Make the current line a heading.
 Supported levels 1~3.
 
 Example:
+
 ![heading_example](images/heading.png)
 
 Keybinds:
@@ -27,6 +28,7 @@ Create the second-line for a table using the current line as header.
 It creates the third (empty) line as well, just with the columns separators, ready to punch-in your data.
 
 Example:
+
 ![table_example](images/table.png)
 
 Keybind:
@@ -49,6 +51,7 @@ Add a footnote to the current line, then start editing.
 It also saves a mark ("n" is default), to jump back to the previous line. You can also press `^o` / `C-o`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
 
 Example:
+
 ![footnote_example](images/footnote.png)
 
 Keybind:
