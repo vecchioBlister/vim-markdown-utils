@@ -39,7 +39,7 @@ nnoremap <leader>u3 :call MarkdownHeading(3)<cr>
 function! MarkdownTable()
 	normal! yypf|
 	let position = col(".")
-	let columns = 1
+	let columns = 0
 	normal! ?|<cr>
 	normal! 0lvt|r-b
 	while position < col("$") - 1
