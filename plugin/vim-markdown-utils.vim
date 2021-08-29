@@ -103,3 +103,41 @@ function! MarkdownFootnote()
 endfunction
 
 nnoremap <leader>fn :call MarkdownFootnote()<cr>
+
+" markdown task
+function! MarkdownTask(done)
+	normal! mz
+		"set marker to come back
+	normal! 0f-
+	if matchstr(getline("."), '\%' . col(".") . 'c.') != '-'
+		let markeroffset = 2
+		normal! i- 
+		echo "This task wasn't in a list; automatically indented"
+		normal! l
+	else
+		let markeroffset = 0
+		normal! 2l
+	endif
+	if matchstr(getline("."), '\%' . col(".") . 'c.') != '['
+		" if not a task, set it
+		let markeroffset = markeroffset + 4
+		normal! i[ ] 
+		normal! 2h
+	else
+		normal! l
+	endif
+	if a:done == 0
+		normal! r 
+	else
+		normal! rx
+	endif
+	normal! `z
+	while markeroffset > 0
+		normal! l
+		let markeroffset = markeroffset - 1
+		" go back to marker
+	endwhile
+endfunction
+
+nnoremap <leader>tt : call MarkdownTask(0)<cr>
+nnoremap <leader>td : call MarkdownTask(1)<cr>

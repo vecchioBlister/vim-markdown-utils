@@ -3,6 +3,8 @@ vim-markdown-utils
 
 A small collection of functions for markdown syntax.
 
+Feel free to fork this plugin and make your own modifications, but I would appreciate feedback and suggestions as well!
+
 
 MarkdownHeading(level)
 ----------------------
@@ -81,3 +83,22 @@ to whatever you prefer, by adding this to your .vimrc.
 	- It tracks the number of footnotes with a buffer-scoped variable; if the buffer is unloaded, or footnotes existed already before opening it, the newly added ones will start from 1.
 	- To patch this, you can type the command `:let b:footnotes = N`, replacing `N` with the **footnote you want next**.
 - MarkdownFootnote() 's global variable for the default mark doesn't work properly.
+
+
+MarkdownTasks(done)
+-------------------
+
+Manage the current line (in a list) as a task.
+- If the line isn't in a list, a "- " gets added before it. *Note: this can create conflict if there's another "-" in the line.*
+- If the line is not a task, it becomes one automagically, whether you set it as TODO or DONE.
+- Your cursor always comes back to the original position.
+
+Example:
+
+![task_example](images/task.gif)
+
+Keybinds:
+```
+<leader>tt
+<leader>td
+```
