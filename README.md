@@ -41,13 +41,14 @@ Keybind:
 MarkdownItalic(enum)
 --------------------
 
-Set the current word to *italic*, **bold** or ***strong***.
+Set the current word to *italic*, **bold**, ***strong*** or ~~strikethrough~~.
 
 Keybinds:
 ```
 <leader>iw
 <leader>bw
 <leader>sw
+<leader>stw
 ```
 
 

@@ -65,12 +65,17 @@ function! MarkdownItalic(enum)
 		" strong
 		normal! i***
 		normal! ea***
+	elseif a:enum == 3
+		" strong
+		normal! i~~
+		normal! ea~~
 	endif
 endfunction
 
 nnoremap <leader>iw :call MarkdownItalic(0)<cr>
 nnoremap <leader>bw :call MarkdownItalic(1)<cr>
 nnoremap <leader>sw :call MarkdownItalic(2)<cr>
+nnoremap <leader>stw :call MarkdownItalic(3)<cr>
 
 " markdown footnote
 function! MarkdownFootnote()
