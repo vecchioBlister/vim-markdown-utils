@@ -58,7 +58,7 @@ MarkdownFootnote()
 ------------------
 
 Add a footnote to the current line, then start editing.
-It also saves a mark ("n" is default), to jump back to the previous line. You can also press `^o` / `c-o`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
+It also saves a mark ("n" is default), to jump back to the previous line. You can also press `c-o`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
 
 Example:
 
