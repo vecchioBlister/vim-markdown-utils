@@ -15,9 +15,9 @@ Example:
 ![heading_example](images/heading.png)
 
 Keybinds:
-> <leader>u1
-> <leader>u2
-> <leader>u3
+> \<leader\>u1
+> \<leader\>u2
+> \<leader\>u3
 
 
 MarkdownTable()
@@ -31,7 +31,7 @@ Example:
 ![table_example](images/table.png)
 
 Keybind:
-> <leader>tbl
+> \<leader\>tbl
 
 
 MarkdownItalic(enum)
@@ -40,9 +40,9 @@ MarkdownItalic(enum)
 Set the current word to *italic*, **bold** or ***strong***.
 
 Keybinds:
-> <leader>iw
-> <leader>bw
-> <leader>sw
+> \<leader\>iw
+> \<leader\>bw
+> \<leader\>sw
 
 
 MarkdownFootnote()
@@ -56,7 +56,7 @@ Example:
 ![footnote_example](images/footnote.png)
 
 Keybind:
-> <leader>fn
+> \<leader\>fn
 
 Change mark letter:
 > let g:markdownfootnote_mark = "x"
