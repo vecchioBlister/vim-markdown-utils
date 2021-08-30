@@ -57,8 +57,9 @@ Keybinds:
 MarkdownFootnote()
 ------------------
 
-Add a footnote to the current line, then start editing.
-It also saves a mark ("n" is default), to jump back to the previous line. You can also press `<c-o>`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
+Add a footnote to the current line, then start editing at the end of the file.
+It also saves a mark ("n" is default), to jump back to the source line.
+> You can also press `<c-o>`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
 
 Example:
 
@@ -77,9 +78,9 @@ let g:markdownfootnote_mark = "x"
 to whatever you prefer, by adding this to your .vimrc.
 
 
-### Known limitations:
+### Known limitations
 
-MarkdownFootnote() 's current footnote number is bound to the buffer.
+The current footnote number is bound to the buffer.
 - The number of footnotes is tracked with a buffer-scoped variable; if the file already contained footnotes, or the buffer is unloaded, the variable is reset, and the new footnotes will start from 1.
 - To patch this, you can type the command `:let b:footnotes = N`, replacing `N` with the **footnote you want next**.
 
@@ -87,9 +88,8 @@ MarkdownFootnote() 's current footnote number is bound to the buffer.
 LineSwappie(direction)
 ----------------------
 
-Quickly swap the current line with the one above or below.
-Also supports, with consistent keybinds, quick indent (promotion) and de-indent (demotion).
-Can be used in any language, as it binds to the `<<` and `>>` actions for indentation.
+Quickly move the current line above or below or indent (promote) and de-indent (demote).
+> Can be used in any language, as it binds to `dd` and `p` for vertical swap, and the `<<` and `>>` actions for indentation.
 
 Keybinds:
 ```
@@ -104,9 +104,10 @@ MarkdownTask(done)
 -------------------
 
 Manage the current line (in a list) as a task.
-- If the line isn't in a list, a "- " gets added before it. *Note: this can create conflict if there's another "-" in the line.*
-- If the line is not a task, it becomes one automagically, whether you set it as TODO or DONE.
-- Your cursor always comes back to the original position.
+- If the line isn't in a list, a "- " gets added before it.
+	> Note: this can create conflict if there's another "-" in the line.
+- If the list element is not a task, it becomes one automagically, whether you set it as TODO ``tt`` or DONE ``td``.
+- Your cursor always stays where you put it.
 
 Example:
 
