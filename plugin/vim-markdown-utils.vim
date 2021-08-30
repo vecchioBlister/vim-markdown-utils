@@ -60,8 +60,8 @@ endfunction
 nnoremap <leader>tbl :call MarkdownTable()<cr>
 
 " ================================================
-" markdown italic, bold, strong
-function! MarkdownItalic(enum)
+" markdown italic, bold, strong, strikethrough
+function! MarkdownEmphasis(enum)
 	if col(".") != 1
 		normal! h
 		if matchstr(getline("."), '\%' . col(".") . 'c.') != ' '
@@ -83,16 +83,16 @@ function! MarkdownItalic(enum)
 		normal! i***
 		normal! ea***
 	elseif a:enum == 3
-		" strong
+		" strikethrough
 		normal! i~~
 		normal! ea~~
 	endif
 endfunction
 
-nnoremap <leader>iw :call MarkdownItalic(0)<cr>
-nnoremap <leader>bw :call MarkdownItalic(1)<cr>
-nnoremap <leader>sw :call MarkdownItalic(2)<cr>
-nnoremap <leader>stw :call MarkdownItalic(3)<cr>
+nnoremap <leader>iw :call MarkdownEmphasis(0)<cr>
+nnoremap <leader>bw :call MarkdownEmphasis(1)<cr>
+nnoremap <leader>sw :call MarkdownEmphasis(2)<cr>
+nnoremap <leader>stw :call MarkdownEmphasis(3)<cr>
 
 " ================================================
 " markdown footnote

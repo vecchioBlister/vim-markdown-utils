@@ -40,7 +40,7 @@ Keybind:
 ```
 
 
-MarkdownItalic(enum)
+MarkdownEmphasis(enum)
 --------------------
 
 Set the current word to *italic*, **bold**, ***strong*** or ~~strikethrough~~.
