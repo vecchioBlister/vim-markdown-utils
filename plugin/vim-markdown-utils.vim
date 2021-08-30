@@ -38,10 +38,12 @@ nnoremap <leader>u3 :call MarkdownHeading(3)<cr>
 " markdown table
 function! MarkdownTable()
 	normal! yypf|
+		" create second line
 	let position = col(".")
 	let columns = 0
 	normal! ?|<cr>
 	normal! 0lvt|r-b
+		" replace column text with '-'s
 	while position < col("$") - 1
 		normal! lvt|r-f|
 		let position = col(".")
@@ -50,6 +52,7 @@ function! MarkdownTable()
 	normal! ?|<cr>lvt|r-f|
 	normal! o|
 	while columns > 0
+		" add third line
 		normal! a|
 		let columns = columns - 1
 	endwhile
@@ -60,11 +63,13 @@ endfunction
 nnoremap <leader>tbl :call MarkdownTable()<cr>
 
 " ================================================
-" markdown italic, bold, strong, strikethrough
+" markdown emphasis
 function! MarkdownEmphasis(enum)
 	if col(".") != 1
+		" check if the cursor is in the first col of the line
 		normal! h
 		if matchstr(getline("."), '\%' . col(".") . 'c.') != ' '
+			" check if the cursor is on the first char of a word
 			normal! lb
 		else
 			normal! l
@@ -111,6 +116,7 @@ function! MarkdownFootnote()
 	normal! a]
 	normal! Go
 	if b:footnotes == 1
+		" if it's the first footnote, add a line at EOF
 		normal! o
 	endif
 	normal! a[^
@@ -183,7 +189,7 @@ function! MarkdownTask(done)
 	while markeroffset > 0
 		normal! l
 		let markeroffset = markeroffset - 1
-		" go back to marker
+		" go back to exact position
 	endwhile
 endfunction
 
