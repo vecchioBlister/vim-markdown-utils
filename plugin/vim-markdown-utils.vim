@@ -129,6 +129,41 @@ endfunction
 nnoremap <leader>fn :call MarkdownFootnote()<cr>
 
 " ================================================
+" markdown footnote import
+function! MarkdownFootnoteImport()
+	normal! mz
+		" set marker
+	normal! G0
+	if matchstr(getline("."), '\%' . col(".") . 'c.') == '['
+		normal! l
+		if matchstr(getline("."), '\%' . col(".") . 'c.') == '^'
+			normal! t]
+			let b:footnotes = matchstr(getline("."), '\%' . col(".") . 'c.') + 1
+				" import lowest significant figure
+			let figure = 1
+			while matchstr(getline("."), '\%' . col(".") . 'c.') != '^'
+				" import all other figures
+				normal! h
+				let figure = figure * 10
+				let b:footnotes = b:footnotes + matchstr(getline("."), '\%' . col(".") . 'c.') * figure
+			endwhile
+			exe "echo \"Footnotes found: \"" b:footnotes - 1
+			normal! `z
+		else
+			echo "No footnotes found! Make sure the latest is at the last line of the file."
+		endif
+	endif
+endfunction
+
+"nnoremap <leader>fi :call MarkdownFootnoteImport()<cr>
+
+augroup FootnoteAutoimport
+	" automatically call MarkdownFootnoteImport() on markdown files
+	autocmd!
+	autocmd FileType markdown call MarkdownFootnoteImport()
+augroup END
+
+" ================================================
 " swap lines
 function! LineSwappie(direction)
 	if a:direction == 0

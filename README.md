@@ -78,11 +78,13 @@ let g:markdownfootnote_mark = "x"
 to whatever you prefer, by adding this to your .vimrc.
 
 
-### Known limitations
+### Now featuring automatic footnotes import!
+Whenever you open a markdown file, the function MarkdownFootnoteImport() will be called, and it will attempt to find existing footnotes in the file. If found, the bufer-bound variable will be updated accordingly.
 
-The current footnote number is bound to the buffer.
-- The number of footnotes is tracked with a buffer-scoped variable; if the file already contained footnotes, or the buffer is unloaded, the variable is reset, and the new footnotes will start from 1.
-- To patch this, you can type the command `:let b:footnotes = N`, replacing `N` with the **footnote you want next**.
+In case the command doesn't trigger, or you need to re-import the footnotes, you can type the command
+```
+:call MarkdownFootnotesImport()
+```
 
 
 LineSwappie(direction)
