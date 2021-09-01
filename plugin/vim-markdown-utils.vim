@@ -197,7 +197,10 @@ nnoremap <c-l> :call LineSwappie(3)<cr>
 function! MarkdownTask(done)
 	normal! mz
 		"set marker to come back
-	normal! 0f-
+	normal! 0
+	if matchstr(getline("."), '\%' . col(".") . 'c.') != '-'
+		normal! f-
+	endif
 	if matchstr(getline("."), '\%' . col(".") . 'c.') != '-'
 		let markeroffset = 2
 		normal! i- 
