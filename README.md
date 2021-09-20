@@ -79,7 +79,7 @@ to whatever you prefer, by adding this to your .vimrc.
 
 
 ### Now featuring automatic footnotes import!
-Whenever you open a markdown file, the function MarkdownFootnoteImport() will be called, and it will attempt to find existing footnotes in the file. If found, the bufer-bound variable will be updated accordingly.
+Whenever you open a markdown file, the function MarkdownFootnoteImport() will be called, and it will attempt to find existing footnotes in the file. If found, the buffer-bound variable will be updated accordingly.
 
 In case the command doesn't trigger, or you need to re-import the footnotes, you can type the command
 ```
@@ -90,7 +90,7 @@ In case the command doesn't trigger, or you need to re-import the footnotes, you
 LineSwappie(direction)
 ----------------------
 
-Quickly move the current line above or below or indent (promote) and de-indent (demote).
+Quickly move the current line above or below or indent (demote) and de-indent (promote).
 > Can be used in any language, as it binds to `dd` and `p` for vertical swap, and the `<<` and `>>` actions for indentation.
 
 Keybinds:
