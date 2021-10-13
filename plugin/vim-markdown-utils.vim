@@ -231,5 +231,16 @@ function! MarkdownTask(done)
 	endwhile
 endfunction
 
+function! DeleteMarkdownTask()
+	normal! mz
+		"set marker to come back
+	normal! 0
+	normal! t[
+	normal! 4x
+	normal! `z
+	normal! 4h
+endfunction
+
 nnoremap <leader>tt : call MarkdownTask(0)<cr>
 nnoremap <leader>td : call MarkdownTask(1)<cr>
+nnoremap <leader>dt : call DeleteMarkdownTask()<cr>

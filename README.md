@@ -120,3 +120,14 @@ Keybinds:
 <leader>tt
 <leader>td
 ```
+
+
+DeleteMarkdownTask()
+--------------------
+
+Delete the task brackets in the current line.
+
+Keybind:
+```
+<leader>dt
+```
