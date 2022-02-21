@@ -68,7 +68,7 @@ function! MarkdownEmphasis(enum)
 	if col(".") != 1
 		" check if the cursor is in the first col of the line
 		normal! h
-		if matchstr(getline("."), '\%' . col(".") . 'c.') != ' '
+		if (matchstr(getline("."), '\%' . col(".") . 'c.') != ' ' && matchstr(getline("."), '\%' . col(".") . 'c.') != '	')
 			" check if the cursor is on the first char of a word
 			normal! lb
 		else
