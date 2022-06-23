@@ -187,10 +187,10 @@ function! LineSwappie(direction)
 	endif
 endfunction
 
-nnoremap <c-h> :call LineSwappie(0)<cr>
-nnoremap <c-j> :call LineSwappie(1)<cr>
-nnoremap <c-k> :call LineSwappie(2)<cr>
-nnoremap <c-l> :call LineSwappie(3)<cr>
+"nnoremap <c-h> :call LineSwappie(0)<cr>
+"nnoremap <c-j> :call LineSwappie(1)<cr>
+"nnoremap <c-k> :call LineSwappie(2)<cr>
+"nnoremap <c-l> :call LineSwappie(3)<cr>
 
 " ================================================
 " markdown task
