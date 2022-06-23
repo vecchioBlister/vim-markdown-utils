@@ -30,9 +30,9 @@ function! MarkdownHeading(level)
 	endif
 endfunction
 
-nnoremap <leader>u1 :call MarkdownHeading(1)<cr>
-nnoremap <leader>u2 :call MarkdownHeading(2)<cr>
-nnoremap <leader>u3 :call MarkdownHeading(3)<cr>
+"nnoremap <leader>u1 :call MarkdownHeading(1)<cr>
+"nnoremap <leader>u2 :call MarkdownHeading(2)<cr>
+"nnoremap <leader>u3 :call MarkdownHeading(3)<cr>
 
 " ================================================
 " markdown table
@@ -60,7 +60,7 @@ function! MarkdownTable()
 	startinsert
 endfunction
 
-nnoremap <leader>tbl :call MarkdownTable()<cr>
+"nnoremap <leader>tbl :call MarkdownTable()<cr>
 
 " ================================================
 " markdown emphasis
@@ -94,10 +94,10 @@ function! MarkdownEmphasis(enum)
 	endif
 endfunction
 
-nnoremap <leader>iw :call MarkdownEmphasis(0)<cr>
-nnoremap <leader>bw :call MarkdownEmphasis(1)<cr>
-nnoremap <leader>sw :call MarkdownEmphasis(2)<cr>
-nnoremap <leader>stw :call MarkdownEmphasis(3)<cr>
+"nnoremap <leader>iw :call MarkdownEmphasis(0)<cr>
+"nnoremap <leader>bw :call MarkdownEmphasis(1)<cr>
+"nnoremap <leader>sw :call MarkdownEmphasis(2)<cr>
+"nnoremap <leader>stw :call MarkdownEmphasis(3)<cr>
 
 " ================================================
 " markdown footnote
@@ -126,7 +126,7 @@ function! MarkdownFootnote()
 	let b:footnotes = b:footnotes + 1
 endfunction
 
-nnoremap <leader>fn :call MarkdownFootnote()<cr>
+"nnoremap <leader>fn :call MarkdownFootnote()<cr>
 
 " ================================================
 " markdown footnote import
@@ -157,11 +157,11 @@ endfunction
 
 "nnoremap <leader>fi :call MarkdownFootnoteImport()<cr>
 
-augroup FootnoteAutoimport
-	" automatically call MarkdownFootnoteImport() on markdown files
-	autocmd!
-	autocmd FileType markdown call MarkdownFootnoteImport()
-augroup END
+"augroup FootnoteAutoimport
+"	" automatically call MarkdownFootnoteImport() on markdown files
+"	autocmd!
+"	autocmd FileType markdown call MarkdownFootnoteImport()
+"augroup END
 
 " ================================================
 " swap lines
@@ -241,6 +241,6 @@ function! DeleteMarkdownTask()
 	normal! 4h
 endfunction
 
-nnoremap <leader>tt : call MarkdownTask(0)<cr>
-nnoremap <leader>td : call MarkdownTask(1)<cr>
-nnoremap <leader>dt : call DeleteMarkdownTask()<cr>
+"nnoremap <leader>tt : call MarkdownTask(0)<cr>
+"nnoremap <leader>td : call MarkdownTask(1)<cr>
+"nnoremap <leader>dt : call DeleteMarkdownTask()<cr>

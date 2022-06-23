@@ -18,9 +18,9 @@ Example:
 
 Keybinds:
 ```
-<leader>u1
-<leader>u2
-<leader>u3
+nnoremap <leader>u1 :call MarkdownHeading(1)<cr>
+nnoremap <leader>u2 :call MarkdownHeading(2)<cr>
+nnoremap <leader>u3 :call MarkdownHeading(3)<cr>
 ```
 
 
@@ -36,7 +36,7 @@ Example:
 
 Keybind:
 ```
-<leader>tbl
+nnoremap <leader>tbl :call MarkdownTable()<cr>
 ```
 
 
@@ -47,10 +47,10 @@ Set the current word to *italic*, **bold**, ***strong*** or ~~strikethrough~~.
 
 Keybinds:
 ```
-<leader>iw
-<leader>bw
-<leader>sw
-<leader>stw
+nnoremap <leader>iw :call MarkdownEmphasis(0)<cr>
+nnoremap <leader>bw :call MarkdownEmphasis(1)<cr>
+nnoremap <leader>sw :call MarkdownEmphasis(2)<cr>
+nnoremap <leader>stw :call MarkdownEmphasis(3)<cr>
 ```
 
 
@@ -58,7 +58,7 @@ MarkdownFootnote()
 ------------------
 
 Add a footnote to the current line, then start editing at the end of the file.
-It also saves a mark ("n" is default), to jump back to the source line.
+It also saves a mark ("x" is default), to jump back to the source line.
 > You can also press `<c-o>`, but (as per vim's default functionality), you will just jump back to the line, not the exact point.
 
 Example:
@@ -67,7 +67,7 @@ Example:
 
 Keybind:
 ```
-<leader>fn
+nnoremap <leader>fn :call MarkdownFootnote()<cr>
 ```
 
 Change mark letter:
@@ -78,8 +78,16 @@ let g:markdownfootnote_mark = "x"
 to whatever you prefer, by adding this to your .vimrc.
 
 
-### Now featuring automatic footnotes import!
-Whenever you open a markdown file, the function MarkdownFootnoteImport() will be called, and it will attempt to find existing footnotes in the file. If found, the buffer-bound variable will be updated accordingly.
+### Footnotes import
+Whenever you open a markdown file, the function MarkdownFootnoteImport() will be called, and it will attempt to find existing footnotes in the file.
+If found, the buffer-bound variable will be updated accordingly.
+```
+augroup FootnoteAutoimport
+	" automatically call MarkdownFootnoteImport() on markdown files
+	autocmd!
+	autocmd FileType markdown call MarkdownFootnoteImport()
+augroup END
+```
 
 In case the command doesn't trigger, or you need to re-import the footnotes, you can type the command
 ```
@@ -95,10 +103,10 @@ Quickly move the current line above or below or indent (demote) and de-indent (p
 
 Keybinds:
 ```
-<c-h>
-<c-j>
-<c-k>
-<c-l>
+nnoremap <c-h> :call LineSwappie(0)<cr>
+nnoremap <c-j> :call LineSwappie(1)<cr>
+nnoremap <c-k> :call LineSwappie(2)<cr>
+nnoremap <c-l> :call LineSwappie(3)<cr>
 ```
 
 
@@ -117,8 +125,8 @@ Example:
 
 Keybinds:
 ```
-<leader>tt
-<leader>td
+nnoremap <leader>tt : call MarkdownTask(0)<cr>
+nnoremap <leader>td : call MarkdownTask(1)<cr>
 ```
 
 
@@ -129,5 +137,5 @@ Delete the task brackets in the current line.
 
 Keybind:
 ```
-<leader>dt
+nnoremap <leader>dt : call DeleteMarkdownTask()<cr>
 ```
