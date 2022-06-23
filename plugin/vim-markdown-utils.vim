@@ -107,7 +107,7 @@ function! MarkdownFootnote()
 		let b:footnotes = 1
 	endif
 	if !exists("g:markdownfootnote_mark")
-		let g:markdownfootnote_mark = "n"
+		let g:markdownfootnote_mark = "x"
 	endif
 	exe "normal! m" . g:markdownfootnote_mark
 		" set marker to come back
