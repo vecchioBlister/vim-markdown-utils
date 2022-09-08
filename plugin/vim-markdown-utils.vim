@@ -1,9 +1,9 @@
 " ================================================
 " Filename: plugin/vim-markdown-utils
-" Author: LionSpeck
+" Author: vecchioBlister
 " License: GPLv3
 " ================================================
-" Copyright (C) 2021  LionSpeck
+" Copyright (C) 2021  vecchioBlister
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
